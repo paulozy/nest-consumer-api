@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { Replace } from 'src/utils/Replace';
 
-interface IPostProps {
+export interface IPostProps {
   author: string;
   title: string;
   content: string;
