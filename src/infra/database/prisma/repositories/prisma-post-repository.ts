@@ -21,15 +21,10 @@ export class PrismaPostRepository implements IPostRepository {
   }
 
   async create(post: Post): Promise<void> {
-    const { author, content, id, title } = post;
+    const raw = PrismaPostMapper.toPrisma(post);
 
     await this.prisma.post.create({
-      data: {
-        id,
-        author,
-        title,
-        content,
-      },
+      data: raw,
     });
   }
 }
