@@ -9,7 +9,7 @@ interface CreatePostResponse {
   posts: Post[];
 }
 
-export class CreatePost {
+export class GetAuthorPosts {
   constructor(private readonly postRepository: IPostRepository) {}
 
   async execute(request: CreatePostRequest): Promise<CreatePostResponse> {
