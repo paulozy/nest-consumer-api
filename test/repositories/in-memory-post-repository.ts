@@ -7,4 +7,8 @@ export class InMemoryPostRepository extends IPostRepository {
   async create(post: Post): Promise<void> {
     this.posts.push(post);
   }
+
+  async findByAuthorName(author: string): Promise<Post[]> {
+    return this.posts.filter((post) => post.author === author);
+  }
 }
