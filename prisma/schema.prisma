@@ -8,10 +8,11 @@ datasource db {
 }
 
 model Post {
-  id      String @id
-  author  String
-  title   String
-  content String
+  id        String   @id
+  author    String
+  title     String
+  content   String
+  createdAt DateTime @default(now())
 
   @@index([author])
 }
