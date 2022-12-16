@@ -1,3 +1,4 @@
+import { Injectable } from '@nestjs/common';
 import { Post } from '../entities/Post';
 import { IPostRepository } from '../repositories/post-repository';
 
@@ -11,6 +12,7 @@ interface CreatePostResponse {
   post: Post;
 }
 
+@Injectable()
 export class CreatePost {
   constructor(private readonly postRepository: IPostRepository) {}
 
